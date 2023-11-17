@@ -12,15 +12,15 @@
         $password_confirm = mysqli_real_escape_string($con,$_POST['password_confirm']);
         $address = mysqli_real_escape_string($con,$_POST['address']);
 
-        $query_check = mysqli_query($con,"SELECT `id` from users_mlm_table where username='$username' and status='Activated' limit 1");
+        $query_check = mysqli_query($con,"SELECT `id` from users_mlm_table where username='$referral_username' and status='Activated' limit 1");
 
         if(mysqli_num_rows($query_check) == 1){
 
             $result_check = mysqli_fetch_array($query_check);
             $referral_user = $result_check['id'];
 
-            $query_insert = mysqli_query("INSERT into user (`name`,`username`,`email`,`mobile`,
-                  `address`,`referral_user`,now()) values ('$name','$username','$email','$mobile','$referral_username','$password','$password_confirm','$address')");
+            $query_insert = mysqli_query($con,"INSERT into users_mlm_table (`name`,`username`,`email`,`mobile`,`referral_user`,`address`,`join_date`) values 
+                                                                            ('$name','$username','$email','$mobile','$referral_user','$address',now())");
 
             if($query_insert){
                 echo 1;

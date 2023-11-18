@@ -1,5 +1,5 @@
 <?php
-//    echo 'You are at home page';
+    include('php-includes/check-login.php');
 ?>
 
 <!DOCTYPE html>

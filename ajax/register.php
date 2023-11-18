@@ -14,12 +14,37 @@
 
         $query_check = mysqli_query($con,"SELECT `id` from users_mlm_table where username='$referral_username' and status='Activated' limit 1");
 
-        if(mysqli_num_rows($query_check) == 1){
 
-            $result_check = mysqli_fetch_array($query_check);
-            $referral_user = $result_check['id'];
+        $flag_check = false;
 
-            $query_insert = mysqli_query($con,"INSERT into users_mlm_table (`name`,`username`,`email`,`mobile`,`referral_user`,`address`,`join_date`) values 
+        if($password == $password_confirm){
+
+            
+            if(mysqli_num_rows($query_check) == 1){
+                
+                $result_check = mysqli_fetch_array($query_check);
+                $referral_user = $result_check['id'];
+                
+                $query_check_info = mysqli_query($con, "SELECT `id` FROM users_mlm_table WHERE username='$username' OR email='$email' OR mobile='$mobile' limit 1" );
+        
+                if(mysqli_num_rows($query_check_info)==0){
+                    $flag_check = true;
+                }
+                else {
+                    echo "Invalidité du nom d'utilisateur, mobile , email";
+                }
+            }
+        else {
+            echo 0;
+        }
+    }
+    else {
+        echo 'Mot de passe incorrect';
+    }
+
+    if($flag_check) {
+        //it means all correct
+        $query_insert = mysqli_query($con,"INSERT into users_mlm_table (`name`,`username`,`email`,`mobile`,`referral_user`,`address`,`join_date`) values 
                                                                             ('$name','$username','$email','$mobile','$referral_user','$address',now())");
 
             if($query_insert){
@@ -27,13 +52,8 @@
             }
             else {
                 echo 0;
-            }
-        }
-        else {
-            echo 0;
-        }
+            } 
     }
-    else {
-        echo 0;
-    }
-?>
+
+}
+    ?>

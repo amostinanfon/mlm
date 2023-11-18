@@ -74,7 +74,7 @@
                                     <input type="password" name="password_confirm" class="form-control form-control-user" placeholder="Remettre le mot de passe" required>
                                 </div>
                             </div>
-                            <button type="submit"  href="login.html" class="btn btn-primary btn-user btn-block">
+                            <button type="submit" class="btn btn-primary btn-user btn-block">
                                 Enregistrer le compte
                             </button>
                         </form>

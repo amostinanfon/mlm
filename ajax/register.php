@@ -44,9 +44,8 @@
 
     if($flag_check) {
         //it means all correct
-        $query_insert = mysqli_query($con,"INSERT into users_mlm_table (`name`,`username`,`email`,`mobile`,`referral_user`,`address`,`join_date`) values 
-                                                                            ('$name','$username','$email','$mobile','$referral_user','$address',now())");
-
+        $query_insert = mysqli_query($con,"INSERT into users_mlm_table (`name`,`username`,`email`,`password`,`mobile`,`referral_user`,`address`,`join_date`) values 
+                                                                            ('$name','$username','$email','$password','$mobile','$referral_user','$address',now())");
             if($query_insert){
                 echo 1;
             }

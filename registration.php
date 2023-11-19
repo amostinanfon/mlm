@@ -105,7 +105,7 @@
 
 <script type="text/javascript">
 
-    // form sumitted
+    // form submitted
     $("#form_registration").on('submit', function (){
         $.ajax({
             url:'ajax/register.php',
@@ -114,9 +114,10 @@
             success: function (result){
                 if(result == '1'){
                     alert('registration success');
+                    $('#form_registration').trigger('reset');
                 }
                 else {
-                    alert(result);
+                    alert('registration down');
                 }
         }
         });

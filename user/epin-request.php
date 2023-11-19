@@ -61,7 +61,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Upload la Preuve de paiement</label>
-                                        <input type="file" name="receipt_file" id="receipt_file"  class="form-control" value="0" required>
+                                        <input type="file" name="receipt_file" class="form-control" required>
                                     </div>
                                 </div>
                             </div>
@@ -99,13 +99,15 @@
 require('php-includes/footer.php');
 ?>
 
-<script>
+<script type="text/javascript">
     var single_epin = 500;
-    $("#no_of_epin").keyup(function (){
+    $("#no_of_epin").keyup(function () {
         var total_amount_to_pay = $(this).val() * single_epin;
         $("#amount_to_pay").val(total_amount_to_pay);
 
+
         //Send the form data to server
+
         $('#form_epin_request').submit(function (){
             var formData = new FormData($(this)[0]);
 
@@ -115,12 +117,13 @@ require('php-includes/footer.php');
                 data: formData,
                 success: function (data){
                     //the code run successfully
-                    //alert(data);
-                  if(data == 1) {
+
+                  if(data == '1') {
                       alert ('data inserted successfully');
+                      $('#form_epin_request').trigger('reset');
                   }
                   else {
-                      alert(data);
+                      alert('unable to submit');
                   }
                 },
                 cache: false,
@@ -128,8 +131,7 @@ require('php-includes/footer.php');
                 processData: false
             });
             return false;
-        })
-
+            });
     });
 </script>
 </body>

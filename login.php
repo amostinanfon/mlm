@@ -11,8 +11,13 @@ if(isset($_POST['submit_login'])){
 
             $query = mysqli_query($con, "SELECT * FROM users_mlm_table WHERE email='$email' AND password='$password' limit 1");
 
+
             if(mysqli_num_rows($query) > 0) {
+
+                $result = mysqli_fetch_array($query);
+
                 $_SESSION['userid'] = $email;
+                $_SESSION['user_id'] = $result['id'];
                 $_SESSION['id'] = session_id();
                 $_SESSION['login_type'] = "user";
 

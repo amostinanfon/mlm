@@ -142,7 +142,7 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Selection "Se Déconnecter" si vous souhaitez vous déconnecter.</div>
+            <div class="modal-body">Sélectionner "Se Déconnecter" si vous souhaitez vous déconnecter.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Supprimer</button>
                 <a class="btn btn-primary" href="../login.php">Se Déconnecter</a>

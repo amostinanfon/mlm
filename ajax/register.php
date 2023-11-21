@@ -3,6 +3,7 @@
 
     /** @var TYPE_NAME $con */
     if(isset($_POST['username'])){
+        $valid_id = mysqli_real_escape_string($con,$_POST['valid_id']);
         $name = mysqli_real_escape_string($con,$_POST['name']);
         $username = mysqli_real_escape_string($con,$_POST['username']);
         $email = mysqli_real_escape_string($con,$_POST['email']);
@@ -14,6 +15,7 @@
 
         $query_check = mysqli_query($con,"SELECT `id` from users_mlm_table where username='$referral_username' and status='Activated' limit 1");
 
+        
 
         $flag_check = false;
 

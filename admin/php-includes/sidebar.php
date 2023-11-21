@@ -27,31 +27,30 @@
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                    Pages
+                    Liens
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                            Authentification
+                            Générer les liens
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="login.html">Se connecter</a>
-                                <a class="nav-link" href="register.html">Enregistrer</a>
-                                <a class="nav-link" href="password.html">Mot de passe oublié</a>
+                                <a class="nav-link" href="lien.php">generer les liens ici</a>
+<!--                                <a class="nav-link" href="register.html">Enregistrer</a>-->
+<!--                                <a class="nav-link" href="password.html">Mot de passe oublié</a>-->
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                            Error
+                            Voir les liens
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="401.html">401 Page</a>
-                                <a class="nav-link" href="404.html">404 Page</a>
-                                <a class="nav-link" href="500.html">500 Page</a>
+                                <a class="nav-link" href="linkunused.php">Liens Utilisés</a>
+                                <a class="nav-link" href="linkused.php">Liens Non ulitisés</a>
                             </nav>
                         </div>
                     </nav>

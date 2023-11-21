@@ -42,6 +42,12 @@
                         </div>
                         <form id="form_registration">
                             <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <input type="text" name="valid_id" id="valid_id" class="form-control form-control-user" placeholder="Entrer l'ID d'activation" required>
+                                    <div id="valid_status"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input type="text" name="name" class="form-control form-control-user" placeholder="Nom" required>
                                 </div>
@@ -125,6 +131,23 @@
         return false;
     });
 
+    $("#valid_id").change(function(){
+        var valid_id = $("#valid_id").val();
+
+        $.post("ajax/check-valid-id.php",{valid_id: valid_id}, function (data){
+
+            if (data == '1'){
+                $("#valid_status").html("ID valide");
+                $('#valid_status').css("color", "green");
+                $('#valid_status').css("font-weight", "bold");
+            }
+            else {
+                $("#valid_status").html("ID Invalide");
+                $('#valid_status').css("color", "red");
+                $('#valid_status').css("font-weight", "bold");
+            }
+        });
+    });
 
     //check username
     $("#username").change(function(){
@@ -132,13 +155,14 @@
 
         $.post("ajax/check-valid-username.php",{username: username}, function (data){
             if (data == '1'){
-                $("#username_status").html("This is valid username");
+                $("#username_status").html("Username valide");
             }
             else {
-                $("#username_status").html("Invalid username");
+                $("#username_status").html(" Nom invalide");
             }
         })
-    })
+    });
+
 </script>
 
 </body>

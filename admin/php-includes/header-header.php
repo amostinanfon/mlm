@@ -16,7 +16,7 @@
             <li><a class="dropdown-item" href="#!">Paramètres</a></li>
             <li><a class="dropdown-item" href="#!">Journal d'activités</a></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#!">Se Déconnecter</a></li>
+            <li><a class="dropdown-item" href="logout.php">Se Déconnecter</a></li>
         </ul>
     </li>
 </ul>

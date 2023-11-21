@@ -10,13 +10,12 @@
         if(!empty($_FILES['receipt_file']['tmp_name'])){
 
             $user_id = $_SESSION['user_id'];
-            $query = mysqli_query($con, "INSERT INTO
-            epin_request(`userid`,`no_of_epin`,`date`) values ('$user_id','$no_of_epin',now())");
+            $query = mysqli_query($con, "INSERT INTO epin_request(`userid`,`no_of_epin`,`date`) values ('$user_id','$no_of_epin',now())");
 
-//            $new_id = mysqli_insert_id($con);
-//            //echo mysqli_error($con);
-//
-//            move_uploaded_file($_FILES['receipt_file']['tmp_name'],"../receipt/".$new_id.".png");
+            $new_id = mysqli_insert_id($con);
+            echo mysqli_error($con);
+
+            move_uploaded_file($_FILES['receipt_file']['tmp_name'],"../receipt/".$new_id.".png");
 
             echo 1;
         }
